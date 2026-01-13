@@ -182,7 +182,7 @@ def main():
             fmt = questionary.select("Format (default: .webm):", choices=["webm", "mp4"], default="webm").ask()
             q_cap = questionary.select("Quality (default: best):", choices=["best", "1080", "720", "480", "360"], default=None).ask()
             
-            q = None if q == "best" else int(q_cap)
+            q = None if q_cap == "best" else int(q_cap)
             
             result = download_video(url=url, video_format=fmt, specific_quality=q)
         elif choice.startswith("🔉"):
